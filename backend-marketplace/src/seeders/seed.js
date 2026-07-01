@@ -20,9 +20,9 @@ async function seed() {
   });
 
   await User.create({
-    name: 'Antony',
+    name: 'Nuñez',
     email: 'customer@marketplace.com',
-    password: 'Customer123!',
+    password: await bcrypt.hash('Customer123!', 10),
     roleId: customerRole.id,
   });
   console.log('Users created.');
